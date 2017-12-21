@@ -7,7 +7,9 @@ import registerServiceWorker from './registerServiceWorker';
 import { applyMiddleware,createStore } from 'redux';
 import { Provider } from 'react-redux';
 import {Route,BrowserRouter,Switch} from 'react-router-dom';
-import ListUsers from './component/ListUsers';
+import ListUsers from './component/ListUsers/index';
+
+import Header from './component/Header';
 
 import API from './middlewares/api';
 
@@ -20,6 +22,7 @@ ReactDOM.render(
     <Provider store={createStoreWithMiddleware(rootReducer)}>
         <BrowserRouter>
             <div>
+                <Header />
                 <Switch>
                     <Route exact path='/' component={ListUsers} />
                 </Switch>
